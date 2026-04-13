@@ -1,0 +1,409 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/description.css">
+    <link rel="stylesheet" type="text/css" href="/css/glyphter.css">
+    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
+    <script src="https://kit.fontawesome.com/e546e56560.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="/js/serializejson.js"></script>
+    <script src="/js/dice/libs/three.min.js"></script>
+    <script src="/js/dice/libs/cannon.min.js"></script>
+    <script src="/js/dice/libs/teal.js"></script>
+    <script src="/js/dice/dice.js"></script>
+    <script src="/js/helpers.js"></script>
+    <script src="/js/browser.js"></script>
+    <script src="/js/navigation.js"></script>
+    <script src="/js/configurator.js"></script>
+    <script src="/js/ui.js"></script>
+    <script src="/js/dice.js"></script>    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Sparks</title>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mythic Bastionland Spark Tables" />
+    <meta name="twitter:description" content="A collection of spark tables for Mythic Bastionland" />
+    <meta property="og:url" content="https://mythic.bastionland.tools/sparks" />
+    <meta property="og:image" content="https://mythic.bastionland.tools/img/card.webp" />
+    <meta property="twitter:image" content="https://mythic.bastionland.tools/img/card.webp" />
+</head>
+
+<body>
+    <div class="navigation">
+        <span class="title">The Tool</span>
+        <span class="subtitle">A Mythic Bastionland Resource</span>
+        <ul class="tabs">
+            <li class="tab-container">
+                <a href="#" data-dest="/" class="tab direct" role="button">Home</a>
+            </li>
+            <li class="tab-container">
+                <a href="#" class="tab dropdown" role="button" aria-expanded="false">Rules</a>
+                <ul class="dropdown-menu" role="menu" style="display: none;">
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/rules/">Glossary</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/guidance/">Seer's Guidance</li>
+                </ul>
+            </li>
+            <li class="tab-container">
+                <a href="#" class="tab dropdown" role="button" aria-expanded="false">Compendiums</a>
+                <ul class="dropdown-menu" role="menu" style="display: none;">
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/items/">Items</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/knights/">Knights</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/seers/">Seers</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/myths/">Myths</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/sparks/">Sparks</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/cast/">Cast</li>
+                </ul>
+            </li>
+            <li class="tab-container">
+                <a data-dest="/map" class="tab direct" role="button">Realm Maker</a>
+            </li>
+            <li class="search-bar">
+                <input type="search" class="search-input" id="search-input" placeholder="Ctrl + Space to search..."></input>
+                <button class="search-submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <ul class="search-results" id="search-results"></ul>
+            </li>
+            <li class="tab-container">
+                <div class="config-button tab" title="Configurator">
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="overlay"></div>
+    <div class="dialog-backdrop"></div>
+    <div class="content thin">
+        <div class="browser" id="list">
+            <header>
+    <div class="head">
+        <h1 class="browser-title">Sparks</h1>
+    </div>
+    <div class="input">
+        <input type="text" class="list-input" id="list-input">
+        <div class="filter-total"></div>
+        <button class="filter-button" title="Filter Results">Filter</button>
+    </div>
+    <ul class="filter-items">
+    </ul>
+    <div class="list-header">
+        <label class="name" data-sort="name">Name</label>
+        <label data-sort="type">
+            Type
+        </label>
+    </div>
+</header>
+<ul class="list" id="item-list">
+    <li class="browser-item" id="0HfpETTy4oH5HlAP" data-name="Ailment" data-type="people">
+        <label class="name">
+            Ailment
+        </label>
+        <label>
+            People
+        </label>
+    </li>
+    <li class="browser-item" id="ElCAosgz4PqtOQIj" data-name="Appearance" data-type="people">
+        <label class="name">
+            Appearance
+        </label>
+        <label>
+            People
+        </label>
+    </li>
+    <li class="browser-item" id="Tm6GJW6zKfN69JrZ" data-name="Background" data-type="people">
+        <label class="name">
+            Background
+        </label>
+        <label>
+            People
+        </label>
+    </li>
+    <li class="browser-item" id="9qGXRSyBuqMVa8oE" data-name="Bailey" data-type="civilization">
+        <label class="name">
+            Bailey
+        </label>
+        <label>
+            Civilization
+        </label>
+    </li>
+    <li class="browser-item" id="ktVJFqDYN8wizslb" data-name="Battlefield" data-type="combat">
+        <label class="name">
+            Battlefield
+        </label>
+        <label>
+            Combat
+        </label>
+    </li>
+    <li class="browser-item" id="47d34e0a-7f8a-4027-ade9-0dc5a0b41df6" data-name="Between the Ages" data-type="sparks">
+        <label class="name">
+            Between the Ages
+        </label>
+        <label>
+            Sparks
+        </label>
+    </li>
+    <li class="browser-item" id="1AXhPPR6ZuW5CSby" data-name="Conflict" data-type="combat">
+        <label class="name">
+            Conflict
+        </label>
+        <label>
+            Combat
+        </label>
+    </li>
+    <li class="browser-item" id="E01E8DxnQpZu271L" data-name="Deployment" data-type="combat">
+        <label class="name">
+            Deployment
+        </label>
+        <label>
+            Combat
+        </label>
+    </li>
+    <li class="browser-item" id="QjSECfTkghfK8IpU" data-name="Desire" data-type="people">
+        <label class="name">
+            Desire
+        </label>
+        <label>
+            People
+        </label>
+    </li>
+    <li class="browser-item" id="EA2WZ1FocNt5lMRq" data-name="Drama" data-type="civilization">
+        <label class="name">
+            Drama
+        </label>
+        <label>
+            Civilization
+        </label>
+    </li>
+    <li class="browser-item" id="30bQ5tqz6xRf4s7u" data-name="Duel" data-type="combat">
+        <label class="name">
+            Duel
+        </label>
+        <label>
+            Combat
+        </label>
+    </li>
+    <li class="browser-item" id="t97yoVlXMkSpKijU" data-name="Event" data-type="combat">
+        <label class="name">
+            Event
+        </label>
+        <label>
+            Combat
+        </label>
+    </li>
+    <li class="browser-item" id="RdlKqWXuBgrJicEK" data-name="Fauna" data-type="nature">
+        <label class="name">
+            Fauna
+        </label>
+        <label>
+            Nature
+        </label>
+    </li>
+    <li class="browser-item" id="6hW21DDYLC0LegaK" data-name="Feature" data-type="nature">
+        <label class="name">
+            Feature
+        </label>
+        <label>
+            Nature
+        </label>
+    </li>
+    <li class="browser-item" id="5p4zfjv3nqbR6wMc" data-name="Flora" data-type="nature">
+        <label class="name">
+            Flora
+        </label>
+        <label>
+            Nature
+        </label>
+    </li>
+    <li class="browser-item" id="7v8eB29gMIRIkHMA" data-name="Food" data-type="civilization">
+        <label class="name">
+            Food
+        </label>
+        <label>
+            Civilization
+        </label>
+    </li>
+    <li class="browser-item" id="ZnlA5Z6GqDtYMxu8" data-name="Goods" data-type="civilization">
+        <label class="name">
+            Goods
+        </label>
+        <label>
+            Civilization
+        </label>
+    </li>
+    <li class="browser-item" id="0oWwXv0AzNux8Wfu" data-name="Heraldry" data-type="people">
+        <label class="name">
+            Heraldry
+        </label>
+        <label>
+            People
+        </label>
+    </li>
+    <li class="browser-item" id="gRTdrKoxPhCujNn6" data-name="Holding" data-type="civilization">
+        <label class="name">
+            Holding
+        </label>
+        <label>
+            Civilization
+        </label>
+    </li>
+    <li class="browser-item" id="SAohnF5tRONbwFiR" data-name="Keep" data-type="civilization">
+        <label class="name">
+            Keep
+        </label>
+        <label>
+            Civilization
+        </label>
+    </li>
+    <li class="browser-item" id="jDJAsMB9jJVM0hBh" data-name="Land" data-type="nature">
+        <label class="name">
+            Land
+        </label>
+        <label>
+            Nature
+        </label>
+    </li>
+    <li class="browser-item" id="F7BeRXuu6W4UjxZ1" data-name="Luxuries" data-type="civilization">
+        <label class="name">
+            Luxuries
+        </label>
+        <label>
+            Civilization
+        </label>
+    </li>
+    <li class="browser-item" id="k1VYug5Uhs5BCEEw" data-name="Manoeuvres" data-type="combat">
+        <label class="name">
+            Manoeuvres
+        </label>
+        <label>
+            Combat
+        </label>
+    </li>
+    <li class="browser-item" id="T5a9vEyy5lCaJCWT" data-name="News" data-type="civilization">
+        <label class="name">
+            News
+        </label>
+        <label>
+            Civilization
+        </label>
+    </li>
+    <li class="browser-item" id="cBgqDNFSwJYgJXWo" data-name="Otherworld" data-type="nature">
+        <label class="name">
+            Otherworld
+        </label>
+        <label>
+            Nature
+        </label>
+    </li>
+    <li class="browser-item" id="2NzOf5yI6ZrXVuhB" data-name="Personality" data-type="people">
+        <label class="name">
+            Personality
+        </label>
+        <label>
+            People
+        </label>
+    </li>
+    <li class="browser-item" id="5QQz4PFT7E43xAsG" data-name="Relationship" data-type="people">
+        <label class="name">
+            Relationship
+        </label>
+        <label>
+            People
+        </label>
+    </li>
+    <li class="browser-item" id="VicZJux1LtMy1oQd" data-name="Sky" data-type="nature">
+        <label class="name">
+            Sky
+        </label>
+        <label>
+            Nature
+        </label>
+    </li>
+    <li class="browser-item" id="dZjS0vuilwevRW3S" data-name="Soldier" data-type="combat">
+        <label class="name">
+            Soldier
+        </label>
+        <label>
+            Combat
+        </label>
+    </li>
+    <li class="browser-item" id="f4ebcdf2-46c3-42ad-bed0-2d1284ba390d" data-name="Squire" data-type="sparks">
+        <label class="name">
+            Squire
+        </label>
+        <label>
+            Sparks
+        </label>
+    </li>
+    <li class="browser-item" id="SQm2VCT462rRptYY" data-name="Strategy" data-type="combat">
+        <label class="name">
+            Strategy
+        </label>
+        <label>
+            Combat
+        </label>
+    </li>
+    <li class="browser-item" id="3KdubsxsmIGlD2e8" data-name="Task" data-type="people">
+        <label class="name">
+            Task
+        </label>
+        <label>
+            People
+        </label>
+    </li>
+    <li class="browser-item" id="XLKvAxAaWdb00srp" data-name="Voice" data-type="people">
+        <label class="name">
+            Voice
+        </label>
+        <label>
+            People
+        </label>
+    </li>
+    <li class="browser-item" id="W8NyNLdjOFuwqqm8" data-name="Water" data-type="nature">
+        <label class="name">
+            Water
+        </label>
+        <label>
+            Nature
+        </label>
+    </li>
+    <li class="browser-item" id="LLwt9q2cglLPF61s" data-name="Weapon" data-type="combat">
+        <label class="name">
+            Weapon
+        </label>
+        <label>
+            Combat
+        </label>
+    </li>
+    <li class="browser-item" id="0voOOGTXv5HQ3MBc" data-name="Weather" data-type="nature">
+        <label class="name">
+            Weather
+        </label>
+        <label>
+            Nature
+        </label>
+    </li>
+    <li class="browser-item" id="BqYlN7sItN10RaWa" data-name="Woe" data-type="civilization">
+        <label class="name">
+            Woe
+        </label>
+        <label>
+            Civilization
+        </label>
+    </li>
+    <li class="browser-item" id="EWDdrq0Ipd0Hk3Pw" data-name="Wonder" data-type="nature">
+        <label class="name">
+            Wonder
+        </label>
+        <label>
+            Nature
+        </label>
+    </li>
+</ul>
+        </div>
+        <div class="item-display" id="description">
+            
+        </div>
+    </div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"97d79a951e5e4cc982e514c8732573ec","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>

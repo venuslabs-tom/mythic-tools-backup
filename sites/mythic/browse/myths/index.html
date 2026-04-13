@@ -1,0 +1,138 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/description.css">
+    <link rel="stylesheet" type="text/css" href="/css/glyphter.css">
+    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
+    <script src="https://kit.fontawesome.com/e546e56560.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="/js/serializejson.js"></script>
+    <script src="/js/dice/libs/three.min.js"></script>
+    <script src="/js/dice/libs/cannon.min.js"></script>
+    <script src="/js/dice/libs/teal.js"></script>
+    <script src="/js/dice/dice.js"></script>
+    <script src="/js/helpers.js"></script>
+    <script src="/js/browser.js"></script>
+    <script src="/js/navigation.js"></script>
+    <script src="/js/configurator.js"></script>
+    <script src="/js/ui.js"></script>
+    <script src="/js/dice.js"></script>    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Myths</title>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mythic Bastionland Myths" />
+    <meta name="twitter:description" content="A compendium of myths for Mythic Bastionland." />
+    <meta property="og:url" content="https://mythic.bastionland.tools/myths" />
+    <meta property="og:image" content="https://mythic.bastionland.tools/img/card.webp" />
+    <meta property="twitter:image" content="https://mythic.bastionland.tools/img/card.webp" />
+</head>
+
+<body>
+    <div class="navigation">
+        <span class="title">The Tool</span>
+        <span class="subtitle">A Mythic Bastionland Resource</span>
+        <ul class="tabs">
+            <li class="tab-container">
+                <a href="#" data-dest="/" class="tab direct" role="button">Home</a>
+            </li>
+            <li class="tab-container">
+                <a href="#" class="tab dropdown" role="button" aria-expanded="false">Rules</a>
+                <ul class="dropdown-menu" role="menu" style="display: none;">
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/rules/">Glossary</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/guidance/">Seer's Guidance</li>
+                </ul>
+            </li>
+            <li class="tab-container">
+                <a href="#" class="tab dropdown" role="button" aria-expanded="false">Compendiums</a>
+                <ul class="dropdown-menu" role="menu" style="display: none;">
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/items/">Items</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/knights/">Knights</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/seers/">Seers</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/myths/">Myths</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/sparks/">Sparks</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/cast/">Cast</li>
+                </ul>
+            </li>
+            <li class="tab-container">
+                <a data-dest="/map" class="tab direct" role="button">Realm Maker</a>
+            </li>
+            <li class="search-bar">
+                <input type="search" class="search-input" id="search-input" placeholder="Ctrl + Space to search..."></input>
+                <button class="search-submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <ul class="search-results" id="search-results"></ul>
+            </li>
+            <li class="tab-container">
+                <div class="config-button tab" title="Configurator">
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="overlay"></div>
+    <div class="dialog-backdrop"></div>
+    <div class="content thin">
+        <div class="browser" id="list">
+            <header>
+    <div class="head">
+        <h1 class="browser-title">Myths</h1>
+    </div>
+    <div class="input">
+        <input type="text" class="list-input" id="list-input">
+        <div class="filter-total"></div>
+        <button class="filter-button" title="Filter Results" disabled>Filter</button>
+    </div>
+    <ul class="filter-items">
+    </ul>
+    <div class="list-header">
+        <label class="name" data-sort="title">Name</label>
+    </div>
+</header>
+<ul class="list" id="item-list">
+    <li class="browser-item" id="e5106d02-b3ff-46ac-acbc-4587dad73ad4" data-name="Plague">
+        <label class="name">The Plague</label>
+    </li>
+    <li class="browser-item" id="847983c2-cae7-4f12-9b74-8ecf53b0f059" data-name="Wall">
+        <label class="name">The Wall</label>
+    </li>
+    <li class="browser-item" id="d8bce347-c294-4aa2-9d5e-94713b8e4502" data-name="Shadow">
+        <label class="name">The Shadow</label>
+    </li>
+    <li class="browser-item" id="8303e628-82c4-419c-8c38-d2d9cddc9878" data-name="River">
+        <label class="name">The River</label>
+    </li>
+    <li class="browser-item" id="388cbc8f-b8c0-4bd7-b46a-bce1746b1bbf" data-name="Wyvern">
+        <label class="name">The Wyvern</label>
+    </li>
+    <li class="browser-item" id="beb581e3-7688-4b79-bfb4-b16943626443" data-name="Goblin">
+        <label class="name">The Goblin</label>
+    </li>
+    <li class="browser-item" id="88a23ee1-3967-44cb-bc56-814364722d99" data-name="Forest">
+        <label class="name">The Forest</label>
+    </li>
+    <li class="browser-item" id="dd987800-3216-4056-a461-d5c48a79abb6" data-name="Child">
+        <label class="name">The Child</label>
+    </li>
+    <li class="browser-item" id="0f8b32b5-f1a6-458f-8977-b98263b94075" data-name="Order">
+        <label class="name">The Order</label>
+    </li>
+    <li class="browser-item" id="ed93b3e1-a096-485a-80dc-413ffaa690dc" data-name="Dead">
+        <label class="name">The Dead</label>
+    </li>
+    <li class="browser-item" id="b61b1291-4e41-4498-80c7-1274ba890811" data-name="Underworld">
+        <label class="name">The Underworld</label>
+    </li>
+    <li class="browser-item" id="59bd66e6-235b-4e3d-b0bd-5f091aba9423" data-name="Wurm">
+        <label class="name">The Wurm</label>
+    </li>
+</ul>
+        </div>
+        <div class="item-display" id="description">
+            
+        </div>
+    </div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"97d79a951e5e4cc982e514c8732573ec","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>

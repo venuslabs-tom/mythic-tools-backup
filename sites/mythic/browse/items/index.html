@@ -1,0 +1,663 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/description.css">
+    <link rel="stylesheet" type="text/css" href="/css/glyphter.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/description.css">
+    <link rel="stylesheet" type="text/css" href="/css/glyphter.css">
+    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
+    <script src="https://kit.fontawesome.com/e546e56560.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="/js/serializejson.js"></script>
+    <script src="/js/dice/libs/three.min.js"></script>
+    <script src="/js/dice/libs/cannon.min.js"></script>
+    <script src="/js/dice/libs/teal.js"></script>
+    <script src="/js/dice/dice.js"></script>
+    <script src="/js/helpers.js"></script>
+    <script src="/js/browser.js"></script>
+    <script src="/js/navigation.js"></script>
+    <script src="/js/configurator.js"></script>
+    <script src="/js/ui.js"></script>
+    <script src="/js/dice.js"></script>    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Items</title>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mythic Bastionland Items" />
+    <meta name="twitter:description" content="A comprehensive compendium of Mythic Bastionland items" />
+    <meta property="og:url" content="https://mythic.bastionland.tools/items" />
+    <meta property="og:image" content="https://mythic.bastionland.tools/img/card.webp" />
+    <meta property="twitter:image" content="https://mythic.bastionland.tools/img/card.webp" />
+</head>
+
+<body>
+    <div class="navigation">
+        <span class="title">The Tool</span>
+        <span class="subtitle">A Mythic Bastionland Resource</span>
+        <ul class="tabs">
+            <li class="tab-container">
+                <a href="#" data-dest="/" class="tab direct" role="button">Home</a>
+            </li>
+            <li class="tab-container">
+                <a href="#" class="tab dropdown" role="button" aria-expanded="false">Rules</a>
+                <ul class="dropdown-menu" role="menu" style="display: none;">
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/rules/">Glossary</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/guidance/">Seer's Guidance</li>
+                </ul>
+            </li>
+            <li class="tab-container">
+                <a href="#" class="tab dropdown" role="button" aria-expanded="false">Compendiums</a>
+                <ul class="dropdown-menu" role="menu" style="display: none;">
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/items/">Items</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/knights/">Knights</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/seers/">Seers</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/myths/">Myths</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/sparks/">Sparks</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/cast/">Cast</li>
+                </ul>
+            </li>
+            <li class="tab-container">
+                <a data-dest="/map" class="tab direct" role="button">Realm Maker</a>
+            </li>
+            <li class="search-bar">
+                <input type="search" class="search-input" id="search-input" placeholder="Ctrl + Space to search..."></input>
+                <button class="search-submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <ul class="search-results" id="search-results"></ul>
+            </li>
+            <li class="tab-container">
+                <div class="config-button tab" title="Configurator">
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="overlay"></div>
+    <div class="dialog-backdrop"></div>
+    <div class="content thin">
+        <div class="browser" id="list">
+            <header>
+    <div class="head">
+        <h1 class="browser-title">Items</h1>
+    </div>
+    <div class="input">
+        <input type="text" class="list-input" id="list-input">
+        <div class="filter-total"></div>
+        <button class="filter-button" title="Filter Results">Filter</button>
+    </div>
+    <ul class="filter-items">
+    </ul>
+    <div class="list-header">
+        <label class="name" data-sort="name">Name</label>
+        <label data-sort="type">
+            Type
+        </label>
+        <label data-sort="rarity">
+            Rarity
+        </label>
+    </div>
+</header>
+<ul class="list" id="item-list">
+    <li class="browser-item" id="OaSMuVzXve86aFK2" data-name="Axe"
+        data-rarity="1" data-type="weapon">
+        <label class="name">
+            Axe
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Common
+        </label>
+    </li>
+    <li class="browser-item" id="dOyINRYQiUBmyf6F" data-name="Beasts"
+        data-rarity="-1" data-type="item">
+        <label class="name">
+            Beasts
+        </label>
+        <label>
+            Item
+        </label>
+        <label>
+            Special
+        </label>
+    </li>
+    <li class="browser-item" id="VE7vXdiy1TmoNMFH" data-name="Billhook"
+        data-rarity="1" data-type="weapon">
+        <label class="name">
+            Billhook
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Common
+        </label>
+    </li>
+    <li class="browser-item" id="rLDuVJwoELVqvZJA" data-name="Club"
+        data-rarity="1" data-type="weapon">
+        <label class="name">
+            Club
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Common
+        </label>
+    </li>
+    <li class="browser-item" id="AkIZO3pU7XrTzJK2" data-name="Coat"
+        data-rarity="1" data-type="armor">
+        <label class="name">
+            Coat
+        </label>
+        <label>
+            Armor
+        </label>
+        <label>
+            Uncommon
+        </label>
+    </li>
+    <li class="browser-item" id="19BpUoaxs3fwWkKv" data-name="Common Weapons"
+        data-rarity="1" data-type="weapon">
+        <label class="name">
+            Common Weapons
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Common
+        </label>
+    </li>
+    <li class="browser-item" id="OXeEsVg9AnYCVW31" data-name="Crossbow"
+        data-rarity="2" data-type="weapon">
+        <label class="name">
+            Crossbow
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Rare
+        </label>
+    </li>
+    <li class="browser-item" id="t0GC5p3EBpIeQWFW" data-name="Cudgel"
+        data-rarity="1" data-type="weapon">
+        <label class="name">
+            Cudgel
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Common
+        </label>
+    </li>
+    <li class="browser-item" id="JMNWx3y6v7ExgVHO" data-name="Curvebow"
+        data-rarity="2" data-type="weapon">
+        <label class="name">
+            Curvebow
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Rare
+        </label>
+    </li>
+    <li class="browser-item" id="QCO3X6n1tHqez2DV" data-name="Dagger"
+        data-rarity="1" data-type="weapon">
+        <label class="name">
+            Dagger
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Common
+        </label>
+    </li>
+    <li class="browser-item" id="37b3d61e-2d1f-43f0-992e-ad8d83a2aa32" data-name="Death’s Head"
+        data-rarity="-1" data-type="weapon">
+        <label class="name">
+            Death’s Head
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Special
+        </label>
+    </li>
+    <li class="browser-item" id="nS249e1d0ewUHQiT" data-name="Greataxe"
+        data-rarity="1" data-type="weapon">
+        <label class="name">
+            Greataxe
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Uncommon
+        </label>
+    </li>
+    <li class="browser-item" id="SOhIMwZZuIBQnCdt" data-name="Greatsword"
+        data-rarity="2" data-type="weapon">
+        <label class="name">
+            Greatsword
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Rare
+        </label>
+    </li>
+    <li class="browser-item" id="xlZaXdsyxCP8E9XI" data-name="Handaxe"
+        data-rarity="1" data-type="weapon">
+        <label class="name">
+            Handaxe
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Common
+        </label>
+    </li>
+    <li class="browser-item" id="miyMiAJhHRd1auM3" data-name="Hatchet"
+        data-rarity="1" data-type="weapon">
+        <label class="name">
+            Hatchet
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Common
+        </label>
+    </li>
+    <li class="browser-item" id="UtHKYmeBDzrFdDXz" data-name="Helm"
+        data-rarity="1" data-type="armor">
+        <label class="name">
+            Helm
+        </label>
+        <label>
+            Armor
+        </label>
+        <label>
+            Uncommon
+        </label>
+    </li>
+    <li class="browser-item" id="pFEsSqdFQyjEU1pN" data-name="Javelin"
+        data-rarity="1" data-type="weapon">
+        <label class="name">
+            Javelin
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Common
+        </label>
+    </li>
+    <li class="browser-item" id="BzEjVd8rEMBqk7aT" data-name="Lance"
+        data-rarity="1" data-type="weapon">
+        <label class="name">
+            Lance
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Uncommon
+        </label>
+    </li>
+    <li class="browser-item" id="64duhMkfJKzOegq1" data-name="Logging Axe"
+        data-rarity="1" data-type="weapon">
+        <label class="name">
+            Logging Axe
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Common
+        </label>
+    </li>
+    <li class="browser-item" id="xt9Tff1mbx924hr5" data-name="Longbow"
+        data-rarity="1" data-type="weapon">
+        <label class="name">
+            Longbow
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Uncommon
+        </label>
+    </li>
+    <li class="browser-item" id="DJt25tLqpGviWbYn" data-name="Longsword"
+        data-rarity="2" data-type="weapon">
+        <label class="name">
+            Longsword
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Rare
+        </label>
+    </li>
+    <li class="browser-item" id="vHG1rH2nEd3Har48" data-name="Mace"
+        data-rarity="1" data-type="weapon">
+        <label class="name">
+            Mace
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Common
+        </label>
+    </li>
+    <li class="browser-item" id="hnyeJ3dNoVksF4SZ" data-name="Pick"
+        data-rarity="1" data-type="weapon">
+        <label class="name">
+            Pick
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Common
+        </label>
+    </li>
+    <li class="browser-item" id="deCxGbnrGLIAR5OZ" data-name="Pitchfork"
+        data-rarity="1" data-type="weapon">
+        <label class="name">
+            Pitchfork
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Common
+        </label>
+    </li>
+    <li class="browser-item" id="MgrxzDhulacjitl0" data-name="Plate"
+        data-rarity="2" data-type="armor">
+        <label class="name">
+            Plate
+        </label>
+        <label>
+            Armor
+        </label>
+        <label>
+            Rare
+        </label>
+    </li>
+    <li class="browser-item" id="lJUil4lbQ642RcPZ" data-name="Poisons"
+        data-rarity="-1" data-type="item">
+        <label class="name">
+            Poisons
+        </label>
+        <label>
+            Item
+        </label>
+        <label>
+            Special
+        </label>
+    </li>
+    <li class="browser-item" id="EDbihEqAVfBeJCJi" data-name="Poleaxe"
+        data-rarity="1" data-type="weapon">
+        <label class="name">
+            Poleaxe
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Common
+        </label>
+    </li>
+    <li class="browser-item" id="6Xa4CELe9PsrqQQy" data-name="Rare Weapons"
+        data-rarity="2" data-type="weapon">
+        <label class="name">
+            Rare Weapons
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Rare
+        </label>
+    </li>
+    <li class="browser-item" id="VwJ2aV2jxvFuXhL0" data-name="Remedies"
+        data-rarity="1" data-type="item">
+        <label class="name">
+            Remedies
+        </label>
+        <label>
+            Item
+        </label>
+        <label>
+            Uncommon
+        </label>
+    </li>
+    <li class="browser-item" id="B2owmLXQ62SX30oD" data-name="Sacrament"
+        data-rarity="1" data-type="item">
+        <label class="name">
+            Sacrament
+        </label>
+        <label>
+            Item
+        </label>
+        <label>
+            Uncommon
+        </label>
+    </li>
+    <li class="browser-item" id="8QKLl6QqDFbxRwUf" data-name="Shield"
+        data-rarity="1" data-type="armor">
+        <label class="name">
+            Shield
+        </label>
+        <label>
+            Armor
+        </label>
+        <label>
+            Common
+        </label>
+    </li>
+    <li class="browser-item" id="hjVEH81r0j5AZIqx" data-name="Shortbow"
+        data-rarity="1" data-type="weapon">
+        <label class="name">
+            Shortbow
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Common
+        </label>
+    </li>
+    <li class="browser-item" id="gPcVXyQX8qx2wuoW" data-name="Shortsword"
+        data-rarity="1" data-type="weapon">
+        <label class="name">
+            Shortsword
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Uncommon
+        </label>
+    </li>
+    <li class="browser-item" id="6Y0Zopr1Q1NLBIlC" data-name="Sling"
+        data-rarity="1" data-type="weapon">
+        <label class="name">
+            Sling
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Common
+        </label>
+    </li>
+    <li class="browser-item" id="bhH83HZyRwBOqLhd" data-name="Spear"
+        data-rarity="1" data-type="weapon">
+        <label class="name">
+            Spear
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Common
+        </label>
+    </li>
+    <li class="browser-item" id="n52blaVhabVecJDq" data-name="Specialist Weapons"
+        data-rarity="-1" data-type="weapon">
+        <label class="name">
+            Specialist Weapons
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Special
+        </label>
+    </li>
+    <li class="browser-item" id="BxukO9UJEwd2nGJ8" data-name="Staff"
+        data-rarity="1" data-type="weapon">
+        <label class="name">
+            Staff
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Common
+        </label>
+    </li>
+    <li class="browser-item" id="m4eN8wzWx1wIP2mK" data-name="Stimulant"
+        data-rarity="1" data-type="item">
+        <label class="name">
+            Stimulant
+        </label>
+        <label>
+            Item
+        </label>
+        <label>
+            Uncommon
+        </label>
+    </li>
+    <li class="browser-item" id="04y6tu0NjqOtOxHU" data-name="Sustenance"
+        data-rarity="1" data-type="item">
+        <label class="name">
+            Sustenance
+        </label>
+        <label>
+            Item
+        </label>
+        <label>
+            Uncommon
+        </label>
+    </li>
+    <li class="browser-item" id="da783ea4-b5f0-44a7-81c4-72b4ef408988" data-name="The Butcher’s Bludgeon"
+        data-rarity="-1" data-type="weapon">
+        <label class="name">
+            The Butcher’s Bludgeon
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Special
+        </label>
+    </li>
+    <li class="browser-item" id="ec0319a8-d344-4d01-b20e-7af035bfa183" data-name="The Duellist’s Rod"
+        data-rarity="-1" data-type="weapon">
+        <label class="name">
+            The Duellist’s Rod
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Special
+        </label>
+    </li>
+    <li class="browser-item" id="4b41f6dc-82a0-45e9-86e2-cdfa6a3d2183" data-name="The Gust Wand"
+        data-rarity="-1" data-type="weapon">
+        <label class="name">
+            The Gust Wand
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Special
+        </label>
+    </li>
+    <li class="browser-item" id="2d45ec59-f8d0-4618-9b12-06ad3202afd7" data-name="The Master Mace"
+        data-rarity="-1" data-type="weapon">
+        <label class="name">
+            The Master Mace
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Special
+        </label>
+    </li>
+    <li class="browser-item" id="c9e97344-47ed-4c4a-ad6f-de1849c47688" data-name="The Smithie’s Maul"
+        data-rarity="-1" data-type="weapon">
+        <label class="name">
+            The Smithie’s Maul
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Special
+        </label>
+    </li>
+    <li class="browser-item" id="Agh3e6l3iHJZnenG" data-name="Tools"
+        data-rarity="-1" data-type="item">
+        <label class="name">
+            Tools
+        </label>
+        <label>
+            Item
+        </label>
+        <label>
+            Special
+        </label>
+    </li>
+    <li class="browser-item" id="vFpGjnYbnkcXVsl2" data-name="Uncommon Weapons"
+        data-rarity="1" data-type="weapon">
+        <label class="name">
+            Uncommon Weapons
+        </label>
+        <label>
+            Weapon
+        </label>
+        <label>
+            Uncommon
+        </label>
+    </li>
+</ul>
+        </div>
+        <div class="item-display" id="description">
+            
+        </div>
+    </div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"97d79a951e5e4cc982e514c8732573ec","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>

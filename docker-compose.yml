@@ -1,0 +1,8 @@
+services:
+  wayback_machine_downloader:
+    image: ghcr.io/strawberrymaster/wayback-machine-downloader:master
+    container_name: wayback_machine_downloader
+    tty: true
+    stdin_open: true
+    volumes:
+      - /Users/admin/docker/wmd-straw/sites:/websites
