@@ -1,0 +1,558 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/description.css">
+    <link rel="stylesheet" type="text/css" href="/css/glyphter.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/description.css">
+    <link rel="stylesheet" type="text/css" href="/css/glyphter.css">
+    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
+    <script src="https://kit.fontawesome.com/e546e56560.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="/js/serializejson.js"></script>
+    <script src="/js/dice/libs/three.min.js"></script>
+    <script src="/js/dice/libs/cannon.min.js"></script>
+    <script src="/js/dice/libs/teal.js"></script>
+    <script src="/js/dice/dice.js"></script>
+    <script src="/js/helpers.js"></script>
+    <script src="/js/browser.js"></script>
+    <script src="/js/navigation.js"></script>
+    <script src="/js/configurator.js"></script>
+    <script src="/js/ui.js"></script>
+    <script src="/js/dice.js"></script>    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Rules</title>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mythic Bastionland Rules" />
+    <meta name="twitter:description" content="A comprehensive compendium of Mythic Bastionland rules." />
+    <meta property="og:url" content="https://mythic.bastionland.tools/rules" />
+    <meta property="og:image" content="https://mythic.bastionland.tools/img/card.webp" />
+    <meta property="twitter:image" content="https://mythic.bastionland.tools/img/card.webp" />
+</head>
+
+<body>
+    <div class="navigation">
+        <span class="title">The Tool</span>
+        <span class="subtitle">A Mythic Bastionland Resource</span>
+        <ul class="tabs">
+            <li class="tab-container">
+                <a href="#" data-dest="/" class="tab direct" role="button">Home</a>
+            </li>
+            <li class="tab-container">
+                <a href="#" class="tab dropdown" role="button" aria-expanded="false">Rules</a>
+                <ul class="dropdown-menu" role="menu" style="display: none;">
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/rules/">Glossary</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/guidance/">Seer's Guidance</li>
+                </ul>
+            </li>
+            <li class="tab-container">
+                <a href="#" class="tab dropdown" role="button" aria-expanded="false">Compendiums</a>
+                <ul class="dropdown-menu" role="menu" style="display: none;">
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/items/">Items</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/knights/">Knights</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/seers/">Seers</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/myths/">Myths</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/sparks/">Sparks</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/cast/">Cast</li>
+                </ul>
+            </li>
+            <li class="tab-container">
+                <a data-dest="/map" class="tab direct" role="button">Realm Maker</a>
+            </li>
+            <li class="search-bar">
+                <input type="search" class="search-input" id="search-input" placeholder="Ctrl + Space to search..."></input>
+                <button class="search-submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <ul class="search-results" id="search-results"></ul>
+            </li>
+            <li class="tab-container">
+                <div class="config-button tab" title="Configurator">
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="overlay"></div>
+    <div class="dialog-backdrop"></div>
+    <div class="content thin">
+        <div class="browser" id="list">
+            <header>
+    <div class="head">
+        <h1 class="browser-title">Rules Glossary</h1>
+    </div>
+    <div class="input">
+        <input type="text" class="list-input" id="list-input">
+        <div class="filter-total"></div>
+        <button class="filter-button" title="Filter Results">Filter</button>
+    </div>
+    <ul class="filter-items">
+    </ul>
+    <div class="list-header">
+        <label class="name" data-sort="name">Name</label>
+        <label data-sort="type">Type</label>
+    </div>
+</header>
+<ul class="list" id="item-list">
+    <li class="browser-item" id="U0cRZvrvdyQCKHy8" data-name="Action Procedure" data-type="Rule">
+        <label class="name">Action Procedure</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="dTFXxMAWosNhSU3i" data-name="Advancing Time" data-type="Rule">
+        <label class="name">Advancing Time</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="9btBt0rE5AvXw3mt" data-name="Ages" data-type="Rule">
+        <label class="name">Ages</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="BmeUt7Yesk8hRT73" data-name="Attacks" data-type="Rule">
+        <label class="name">Attacks</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="CapdrFIR5fQTiMqQ" data-name="Barriers" data-type="Rule">
+        <label class="name">Barriers</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="wth6UnvG7N5dmqeQ" data-name="Between Ages" data-type="Rule">
+        <label class="name">Between Ages</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="KrrH14Q3jHr5CGMt" data-name="Between Seasons" data-type="Rule">
+        <label class="name">Between Seasons</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="Q84GshhKtznJytyY" data-name="Blast" data-type="Rule">
+        <label class="name">Blast</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="P2f6vJkFqnxeT07b" data-name="Bonus Attack Dice" data-type="Rule">
+        <label class="name">Bonus Attack Dice</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="sVtJ8E9xvI1n5yAY" data-name="Camping" data-type="Rule">
+        <label class="name">Camping</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="XM3smSOyDUeVgMWz" data-name="Claiming a Seat of Power" data-type="Rule">
+        <label class="name">Claiming a Seat of Power</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="huwiNNXfDFVEkVan" data-name="Conquest" data-type="Rule">
+        <label class="name">Conquest</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="jao8p4SpbPMN1KyH" data-name="Courtly Conflict" data-type="Rule">
+        <label class="name">Courtly Conflict</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="47edfac2-5fe9-4679-8b0b-dcbf300b7c29" data-name="Creating a Realm" data-type="">
+        <label class="name">Creating a Realm</label>
+        <label></label>
+    </li>
+    <li class="browser-item" id="VKF3X9roMxCO2nPp" data-name="Crises" data-type="Rule">
+        <label class="name">Crises</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="ihrxnfnNnK4x8KPd" data-name="Curses" data-type="Rule">
+        <label class="name">Curses</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="Uk3I1q1ontYnrY2A" data-name="Damage" data-type="Rule">
+        <label class="name">Damage</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="277DeX9r1AioelSw" data-name="Death" data-type="Rule">
+        <label class="name">Death</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="G4QYjtCVWeZP6YIA" data-name="Deny" data-type="Rule">
+        <label class="name">Deny</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="1awKBfGuG7xMbNIx" data-name="Dire Weather" data-type="Rule">
+        <label class="name">Dire Weather</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="ehLtyf20u7JwlsrK" data-name="Distant Realms" data-type="Rule">
+        <label class="name">Distant Realms</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="M7caQ5muj7rvEfh3" data-name="Duels &amp; Jousts" data-type="Rule">
+        <label class="name">Duels &amp; Jousts</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="gEhHqMT5ciuQNZXm" data-name="Dwellings" data-type="Rule">
+        <label class="name">Dwellings</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="Lq3J9OOZ8F1DhFXq" data-name="Ending A Session" data-type="Rule">
+        <label class="name">Ending A Session</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="KVv0zNVXVsh9Qquy" data-name="Exploration Actions" data-type="Rule">
+        <label class="name">Exploration Actions</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="h9e6V7nLciONrfTO" data-name="Exposed" data-type="Rule">
+        <label class="name">Exposed</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="WgapBijp9UUG9CWT" data-name="Faith" data-type="Rule">
+        <label class="name">Faith</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="h4ATNWH8WwUmQNdC" data-name="Fatigue" data-type="Rule">
+        <label class="name">Fatigue</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="Ii4ZqGwzc3qZWA8B" data-name="Feats" data-type="Rule">
+        <label class="name">Feats</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="OVaEls1kihdxQT3g" data-name="Focus" data-type="Rule">
+        <label class="name">Focus</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="U8Vl83tcDkRYLmpZ" data-name="Gambits" data-type="Rule">
+        <label class="name">Gambits</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="i8dUaR1tAtVnnkTd" data-name="Gathering Folklore" data-type="Rule">
+        <label class="name">Gathering Folklore</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="y6kKETT9xRDyK2qW" data-name="Getting Started" data-type="Rule">
+        <label class="name">Getting Started</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="uRBBp89wHoJbxHCD" data-name="Giving Information" data-type="Rule">
+        <label class="name">Giving Information</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="p1BbrqwB3IL5KnsP" data-name="Glory" data-type="Rule">
+        <label class="name">Glory</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="knKOaTnN5txOVdIh" data-name="Grand Designs" data-type="Rule">
+        <label class="name">Grand Designs</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="oY1Asu19v9iHa8zw" data-name="Guard (GD)" data-type="Rule">
+        <label class="name">Guard (GD)</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="UuZ3UFDChYMN7gTh" data-name="Hazards" data-type="Rule">
+        <label class="name">Hazards</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="xClo9CbpoanGqoav" data-name="Hefty" data-type="Rule">
+        <label class="name">Hefty</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="dJeZTvmudZnjrS96" data-name="Holdings" data-type="Rule">
+        <label class="name">Holdings</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="LF2qgzMQLIFvnyy4" data-name="Hospitality" data-type="Rule">
+        <label class="name">Hospitality</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="w0AdMBWGQLWhQHd8" data-name="Impaired" data-type="Rule">
+        <label class="name">Impaired</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="JowbBiXQHAfcJjy9" data-name="Improvisation" data-type="Rule">
+        <label class="name">Improvisation</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="Md0zQN9AtzRsos3i" data-name="Knighthood" data-type="Rule">
+        <label class="name">Knighthood</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="GaN0dPf1jqeQ8utO" data-name="Knights" data-type="Rule">
+        <label class="name">Knights</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="Fy9hueqdKhEX0zYj" data-name="Landmarks" data-type="Rule">
+        <label class="name">Landmarks</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="WulWegthfVVDtzTM" data-name="Lay of the Land" data-type="Rule">
+        <label class="name">Lay of the Land</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="CgKQNnZcpB6U2J3K" data-name="Local Mood" data-type="Rule">
+        <label class="name">Local Mood</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="zs2bGjpkII2Etmnv" data-name="Long" data-type="Rule">
+        <label class="name">Long</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="N33evafMmtu93930" data-name="Luck Rolls" data-type="Rule">
+        <label class="name">Luck Rolls</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="88tV0IZ35JoGJ2bt" data-name="Minor Actions" data-type="Rule">
+        <label class="name">Minor Actions</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="T74kT3xY6yPC3MK2" data-name="Misrule" data-type="Rule">
+        <label class="name">Misrule</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="lBdvsLmaxCzXExnv" data-name="Monuments" data-type="Rule">
+        <label class="name">Monuments</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="Kkozior5c3JbSn39" data-name="Mortal Wounds" data-type="Rule">
+        <label class="name">Mortal Wounds</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="arw6LSD4H5hvFDS3" data-name="Mounted Combat" data-type="Rule">
+        <label class="name">Mounted Combat</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="fugS9PjneIggcHrs" data-name="Mustering Troops" data-type="Rule">
+        <label class="name">Mustering Troops</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="UkLl5Nh8ALo2rOgs" data-name="Myth Hexes" data-type="Rule">
+        <label class="name">Myth Hexes</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="zR5oyR4ZccCyWZg2" data-name="Myths" data-type="Rule">
+        <label class="name">Myths</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="T3loxnAcV5W8mGZz" data-name="Omens" data-type="Rule">
+        <label class="name">Omens</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="6xdhNEX7Ptw9GiO6" data-name="Phases of the Day" data-type="Rule">
+        <label class="name">Phases of the Day</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="XNvXhLKSGgqDI8uD" data-name="Primacy of Action" data-type="Rule">
+        <label class="name">Primacy of Action</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="nnTyx6kp0UQOfZFa" data-name="Prompts" data-type="Rule">
+        <label class="name">Prompts</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="sC5DFwEuA3qy9sYa" data-name="Ranged Combat" data-type="Rule">
+        <label class="name">Ranged Combat</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="ZIhAfEIJGxPSkupp" data-name="Reaction" data-type="Rule">
+        <label class="name">Reaction</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="3hsMdqsglAWNjUQu" data-name="Realms" data-type="Rule">
+        <label class="name">Realms</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="bmaKPUz2FBGCgBIt" data-name="Recovery" data-type="Rule">
+        <label class="name">Recovery</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="AtE3VDow2oyGnBK7" data-name="Roles" data-type="Rule">
+        <label class="name">Roles</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="TuBkbx1jAFCmrp19" data-name="Ruins" data-type="Rule">
+        <label class="name">Ruins</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="Ht6YdS1x8Va8s16q" data-name="Ruling a Domain" data-type="Rule">
+        <label class="name">Ruling a Domain</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="QWZ5Xsa3vuo5Bf69" data-name="Sanctums" data-type="Rule">
+        <label class="name">Sanctums</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="gTEIj7A03CsV7ChK" data-name="Saves" data-type="Rule">
+        <label class="name">Saves</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="sc76aTlM7OLBPigZ" data-name="Scars" data-type="Rule">
+        <label class="name">Scars</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="NHGNkjkhMijIw4C0" data-name="Scopes" data-type="Rule">
+        <label class="name">Scopes</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="sTvugWMrpC0o4dpF" data-name="Searching" data-type="Rule">
+        <label class="name">Searching</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="BuleIJa3bFxPopzQ" data-name="Seasons" data-type="Rule">
+        <label class="name">Seasons</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="XD4dA6vKjurF4VsY" data-name="Seers" data-type="Rule">
+        <label class="name">Seers</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="pl9IZBYdgdk404En" data-name="Services" data-type="Rule">
+        <label class="name">Services</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="iTdwOrgq47EPbkJq" data-name="Shieldwalls &amp; Spearwalls" data-type="Rule">
+        <label class="name">Shieldwalls &amp; Spearwalls</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="uPLF8utwanQWOLvz" data-name="Ships &amp; Structures" data-type="Rule">
+        <label class="name">Ships &amp; Structures</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="mTCLJfKpbMHmQUaN" data-name="Sites" data-type="Rule">
+        <label class="name">Sites</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="V0M3WNBrV1pQB3Xi" data-name="Sleep" data-type="Rule">
+        <label class="name">Sleep</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="TL8avk3aIUjFozBV" data-name="Slow" data-type="Rule">
+        <label class="name">Slow</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="w5kp8Mu6RhZosdcq" data-name="Smite" data-type="Rule">
+        <label class="name">Smite</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="iErvWGTiHxk2AKKA" data-name="Squires" data-type="Rule">
+        <label class="name">Squires</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="aa0Sh1GxlbNwtO1p" data-name="Start" data-type="Rule">
+        <label class="name">Start</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="hkdvxbEDAI7rM6wc" data-name="Start &amp; Scope" data-type="Rule">
+        <label class="name">Start &amp; Scope</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="g0Pybiito1VevwT3" data-name="Succession" data-type="Rule">
+        <label class="name">Succession</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="SM0nO3IJlpTHc9Ry" data-name="Supplies" data-type="Rule">
+        <label class="name">Supplies</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="ve87kfCyVMdHYOXp" data-name="Surprise" data-type="Rule">
+        <label class="name">Surprise</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="CpEsC8mNtdQJspUw" data-name="Taxes, Tithes &amp; Levies" data-type="Rule">
+        <label class="name">Taxes, Tithes &amp; Levies</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="cQMFWOJXOBNZTa5w" data-name="The Council" data-type="Rule">
+        <label class="name">The Council</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="X1lghTTFxdKGH1z4" data-name="The Court" data-type="Rule">
+        <label class="name">The Court</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="dBonZyygROm4ueJN" data-name="The Hex Map" data-type="Rule">
+        <label class="name">The Hex Map</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="ml5gCjU1JAnzXajw" data-name="The Seat of Power" data-type="Rule">
+        <label class="name">The Seat of Power</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="O5I0nfb10MRtEujg" data-name="Trade" data-type="Rule">
+        <label class="name">Trade</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="F69orverAgbGvRAj" data-name="Trample" data-type="Rule">
+        <label class="name">Trample</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="mgiCvLsMUxnxtQRB" data-name="Travel Supplies" data-type="Rule">
+        <label class="name">Travel Supplies</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="PxSDkx5wU6kRX5V3" data-name="Travelling" data-type="Rule">
+        <label class="name">Travelling</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="730Af1FmIdloG4vY" data-name="Travelling Blind" data-type="Rule">
+        <label class="name">Travelling Blind</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="R05MWXx2HPz3edbL" data-name="Travelling at Night" data-type="Rule">
+        <label class="name">Travelling at Night</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="WvbLkPLFdRXNqUDg" data-name="Travelling in Winter" data-type="Rule">
+        <label class="name">Travelling in Winter</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="Qq1IJyI2gwt04hUc" data-name="Turns" data-type="Rule">
+        <label class="name">Turns</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="IIcwopNSELGLVF8y" data-name="Unarmed Combat" data-type="Rule">
+        <label class="name">Unarmed Combat</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="KbYH76IbID8eQ2XP" data-name="Unresolved Situations" data-type="Rule">
+        <label class="name">Unresolved Situations</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="BGSDtZpzTaF6jhId" data-name="Virtue Loss" data-type="Rule">
+        <label class="name">Virtue Loss</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="a3wuqgFMQEMjrm0S" data-name="Virtues" data-type="Rule">
+        <label class="name">Virtues</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="SCbu70lcnYlcIayd" data-name="Vision" data-type="Rule">
+        <label class="name">Vision</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="IemxfFfJIeEBZp2e" data-name="Warbands" data-type="Rule">
+        <label class="name">Warbands</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="h5p2G4Q0lIzmtYqb" data-name="Wavering Morale" data-type="Rule">
+        <label class="name">Wavering Morale</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="7N1238s8e5AItkxT" data-name="Wearing Armour" data-type="Rule">
+        <label class="name">Wearing Armour</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="YIrmFRycBX67jxoc" data-name="Wielding Weapons" data-type="Rule">
+        <label class="name">Wielding Weapons</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="SrDvqsJ95Zpx1CzL" data-name="Wilderness" data-type="Rule">
+        <label class="name">Wilderness</label>
+        <label>Rule</label>
+    </li>
+    <li class="browser-item" id="b7M2GiRfch140yQx" data-name="Worthiness" data-type="Rule">
+        <label class="name">Worthiness</label>
+        <label>Rule</label>
+    </li>
+</ul>
+        </div>
+        <div class="item-display" id="description">
+            
+        </div>
+    </div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"97d79a951e5e4cc982e514c8732573ec","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>

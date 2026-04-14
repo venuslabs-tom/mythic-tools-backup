@@ -1,0 +1,138 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/description.css">
+    <link rel="stylesheet" type="text/css" href="/css/glyphter.css">
+    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
+    <script src="https://kit.fontawesome.com/e546e56560.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="/js/serializejson.js"></script>
+    <script src="/js/dice/libs/three.min.js"></script>
+    <script src="/js/dice/libs/cannon.min.js"></script>
+    <script src="/js/dice/libs/teal.js"></script>
+    <script src="/js/dice/dice.js"></script>
+    <script src="/js/helpers.js"></script>
+    <script src="/js/browser.js"></script>
+    <script src="/js/navigation.js"></script>
+    <script src="/js/configurator.js"></script>
+    <script src="/js/ui.js"></script>
+    <script src="/js/dice.js"></script>    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Knights</title>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mythic Bastionland Knights" />
+    <meta name="twitter:description" content="A compendium of knights for Mythic Bastionland." />
+    <meta property="og:url" content="https://mythic.bastionland.tools/knights" />
+    <meta property="og:image" content="https://mythic.bastionland.tools/img/card.webp" />
+    <meta property="twitter:image" content="https://mythic.bastionland.tools/img/card.webp" />
+</head>
+
+<body>
+    <div class="navigation">
+        <span class="title">The Tool</span>
+        <span class="subtitle">A Mythic Bastionland Resource</span>
+        <ul class="tabs">
+            <li class="tab-container">
+                <a href="#" data-dest="/" class="tab direct" role="button">Home</a>
+            </li>
+            <li class="tab-container">
+                <a href="#" class="tab dropdown" role="button" aria-expanded="false">Rules</a>
+                <ul class="dropdown-menu" role="menu" style="display: none;">
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/rules/">Glossary</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/guidance/">Seer's Guidance</li>
+                </ul>
+            </li>
+            <li class="tab-container">
+                <a href="#" class="tab dropdown" role="button" aria-expanded="false">Compendiums</a>
+                <ul class="dropdown-menu" role="menu" style="display: none;">
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/items/">Items</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/knights/">Knights</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/seers/">Seers</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/myths/">Myths</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/sparks/">Sparks</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/cast/">Cast</li>
+                </ul>
+            </li>
+            <li class="tab-container">
+                <a data-dest="/map" class="tab direct" role="button">Realm Maker</a>
+            </li>
+            <li class="search-bar">
+                <input type="search" class="search-input" id="search-input" placeholder="Ctrl + Space to search..."></input>
+                <button class="search-submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <ul class="search-results" id="search-results"></ul>
+            </li>
+            <li class="tab-container">
+                <div class="config-button tab" title="Configurator">
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="overlay"></div>
+    <div class="dialog-backdrop"></div>
+    <div class="content thin">
+        <div class="browser" id="list">
+            <header>
+    <div class="head">
+        <h1 class="browser-title">Knights</h1>
+    </div>
+    <div class="input">
+        <input type="text" class="list-input" id="list-input">
+        <div class="filter-total"></div>
+        <button class="filter-button" title="Filter Results" disabled>Filter</button>
+    </div>
+    <ul class="filter-items">
+    </ul>
+    <div class="list-header">
+        <label class="name" data-sort="name">Name</label>
+    </div>
+</header>
+<ul class="list" id="item-list">
+    <li class="browser-item" id="259f4b14-e998-457a-abf1-10224162ee38" data-name="True Knight">
+        <label class="name">The True Knight</label>
+    </li>
+    <li class="browser-item" id="3e67e686-0329-4d31-aaf8-240f31153454" data-name="Snare Knight">
+        <label class="name">The Snare Knight</label>
+    </li>
+    <li class="browser-item" id="35146e4e-0500-4dfd-a583-765d2a7d7049" data-name="Tourney Knight">
+        <label class="name">The Tourney Knight</label>
+    </li>
+    <li class="browser-item" id="04d079fb-fbd3-45c8-8be1-e32e7cf3a586" data-name="Bloody Knight">
+        <label class="name">The Bloody Knight</label>
+    </li>
+    <li class="browser-item" id="302c3ef3-dac1-4330-87fc-7f675a5aa4cb" data-name="Moss Knight">
+        <label class="name">The Moss Knight</label>
+    </li>
+    <li class="browser-item" id="04dc2ac5-3b06-4033-853c-f9814613504b" data-name="War Knight">
+        <label class="name">The War Knight</label>
+    </li>
+    <li class="browser-item" id="b92393b8-72ce-4e0e-a3c8-aa83e6059cfa" data-name="Willow Knight">
+        <label class="name">The Willow Knight</label>
+    </li>
+    <li class="browser-item" id="6aba9c2f-4397-4ae4-853d-ad0445f0bc00" data-name="Gilded Knight">
+        <label class="name">The Gilded Knight</label>
+    </li>
+    <li class="browser-item" id="19b8f5f5-f0dc-4f06-a028-da3fd6856921" data-name="Saddle Knight">
+        <label class="name">The Saddle Knight</label>
+    </li>
+    <li class="browser-item" id="033b7182-f064-4e9c-9508-a72806a3bb74" data-name="Riddle Knight">
+        <label class="name">The Riddle Knight</label>
+    </li>
+    <li class="browser-item" id="14ccc8a5-4d3f-4ee3-908b-369d6edcedf7" data-name="Talon Knight">
+        <label class="name">The Talon Knight</label>
+    </li>
+    <li class="browser-item" id="79962312-1939-4e6d-ae87-b56dfeb52398" data-name="Barbed Knight">
+        <label class="name">The Barbed Knight</label>
+    </li>
+</ul>
+        </div>
+        <div class="item-display" id="description">
+            
+        </div>
+    </div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"97d79a951e5e4cc982e514c8732573ec","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>

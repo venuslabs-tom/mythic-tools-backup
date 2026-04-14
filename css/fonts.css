@@ -1,0 +1,189 @@
+/* Font Face */
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@0;1&display=swap");
+
+@font-face {
+  font-family: "AnglicanText";
+  src: url("../fonts/AnglicanText.eot");
+  src: url("../fonts/AnglicanText.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/AnglicanText.woff2") format("woff2"),
+    url("../fonts/AnglicanText.woff") format("woff"),
+    url("../fonts/AnglicanText.ttf") format("truetype"),
+    url("../fonts/AnglicanText.svg#AnglicanText") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "TeXGyreSchola";
+  src: url("../fonts/TeXGyreSchola-Bold.eot");
+  src: url("../fonts/TeXGyreSchola-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/TeXGyreSchola-Bold.woff2") format("woff2"),
+    url("../fonts/TeXGyreSchola-Bold.woff") format("woff"),
+    url("../fonts/TeXGyreSchola-Bold.ttf") format("truetype"),
+    url("../fonts/TeXGyreSchola-Bold.svg#TeXGyreSchola-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TeXGyreSchola";
+  src: url("../fonts/TeXGyreSchola-BoldItalic.eot");
+  src: url("../fonts/TeXGyreSchola-BoldItalic.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/TeXGyreSchola-BoldItalic.woff2") format("woff2"),
+    url("../fonts/TeXGyreSchola-BoldItalic.woff") format("woff"),
+    url("../fonts/TeXGyreSchola-BoldItalic.ttf") format("truetype"),
+    url("../fonts/TeXGyreSchola-BoldItalic.svg#TeXGyreSchola-BoldItalic")
+      format("svg");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TeXGyreSchola";
+  src: url("../fonts/TeXGyreSchola-Italic.eot");
+  src: url("../fonts/TeXGyreSchola-Italic.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/TeXGyreSchola-Italic.woff2") format("woff2"),
+    url("../fonts/TeXGyreSchola-Italic.woff") format("woff"),
+    url("../fonts/TeXGyreSchola-Italic.ttf") format("truetype"),
+    url("../fonts/TeXGyreSchola-Italic.svg#TeXGyreSchola-Italic") format("svg");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TeXGyreSchola";
+  src: url("../fonts/TeXGyreSchola-Regular.eot");
+  src: url("../fonts/TeXGyreSchola-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/TeXGyreSchola-Regular.woff2") format("woff2"),
+    url("../fonts/TeXGyreSchola-Regular.woff") format("woff"),
+    url("../fonts/TeXGyreSchola-Regular.ttf") format("truetype"),
+    url("../fonts/TeXGyreSchola-Regular.svg#TeXGyreSchola-Regular")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Old English Text MT";
+  src: url("../fonts/OldEnglishTextMT.eot");
+  src: url("../fonts/OldEnglishTextMT.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/OldEnglishTextMT.woff2") format("woff2"),
+    url("../fonts/OldEnglishTextMT.woff") format("woff"),
+    url("../fonts/OldEnglishTextMT.ttf") format("truetype"),
+    url("../fonts/OldEnglishTextMT.svg#OldEnglishTextMT") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Century Schoolbook";
+  src: url("../fonts/C059-BdIta.eot");
+  src: url("../fonts/C059-BdIta.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/C059-BdIta.woff2") format("woff2"),
+    url("../fonts/C059-BdIta.woff") format("woff"),
+    url("../fonts/C059-BdIta.ttf") format("truetype"),
+    url("../fonts/C059-BdIta.svg#C059-BdIta") format("svg");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Century Schoolbook";
+  src: url("../fonts/C059-Bold.eot");
+  src: url("../fonts/C059-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/C059-Bold.woff2") format("woff2"),
+    url("../fonts/C059-Bold.woff") format("woff"),
+    url("../fonts/C059-Bold.ttf") format("truetype"),
+    url("../fonts/C059-Bold.svg#C059-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Century Schoolbook";
+  src: url("../fonts/C059-Bold_1.eot");
+  src: url("../fonts/C059-Bold_1.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/C059-Bold_1.woff2") format("woff2"),
+    url("../fonts/C059-Bold_1.woff") format("woff"),
+    url("../fonts/C059-Bold_1.ttf") format("truetype"),
+    url("../fonts/C059-Bold_1.svg#C059-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Century Schoolbook";
+  src: url("../fonts/C059-Italic.eot");
+  src: url("../fonts/C059-Italic.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/C059-Italic.woff2") format("woff2"),
+    url("../fonts/C059-Italic.woff") format("woff"),
+    url("../fonts/C059-Italic.ttf") format("truetype"),
+    url("../fonts/C059-Italic.svg#C059-Italic") format("svg");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Century Schoolbook";
+  src: url("C059-Italic_1.eot");
+  src: url("C059-Italic_1.eot?#iefix") format("embedded-opentype"),
+    url("C059-Italic_1.woff2") format("woff2"),
+    url("C059-Italic_1.woff") format("woff"),
+    url("C059-Italic_1.ttf") format("truetype"),
+    url("C059-Italic_1.svg#C059-Italic") format("svg");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Century Schoolbook";
+  src: url("C059-Roman.eot");
+  src: url("C059-Roman.eot?#iefix") format("embedded-opentype"),
+    url("C059-Roman.woff2") format("woff2"),
+    url("C059-Roman.woff") format("woff"),
+    url("C059-Roman.ttf") format("truetype"),
+    url("C059-Roman.svg#C059-Roman") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Century Schoolbook";
+  src: url("C059-BdIta_1.eot");
+  src: url("C059-BdIta_1.eot?#iefix") format("embedded-opentype"),
+    url("C059-BdIta_1.woff2") format("woff2"),
+    url("C059-BdIta_1.woff") format("woff"),
+    url("C059-BdIta_1.ttf") format("truetype"),
+    url("C059-BdIta_1.svg#C059-BdIta") format("svg");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Century Schoolbook";
+  src: url("C059-Roman_1.eot");
+  src: url("C059-Roman_1.eot?#iefix") format("embedded-opentype"),
+    url("C059-Roman_1.woff2") format("woff2"),
+    url("C059-Roman_1.woff") format("woff"),
+    url("C059-Roman_1.ttf") format("truetype"),
+    url("C059-Roman_1.svg#C059-Roman") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

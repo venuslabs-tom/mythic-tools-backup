@@ -1,0 +1,328 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/description.css">
+    <link rel="stylesheet" type="text/css" href="/css/glyphter.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/description.css">
+    <link rel="stylesheet" type="text/css" href="/css/glyphter.css">
+    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
+    <script src="https://kit.fontawesome.com/e546e56560.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="/js/serializejson.js"></script>
+    <script src="/js/dice/libs/three.min.js"></script>
+    <script src="/js/dice/libs/cannon.min.js"></script>
+    <script src="/js/dice/libs/teal.js"></script>
+    <script src="/js/dice/dice.js"></script>
+    <script src="/js/helpers.js"></script>
+    <script src="/js/browser.js"></script>
+    <script src="/js/navigation.js"></script>
+    <script src="/js/configurator.js"></script>
+    <script src="/js/ui.js"></script>
+    <script src="/js/dice.js"></script>    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Items</title>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Guidance from the Seers" />
+    <meta name="twitter:description"
+        content="Mythic Bastionland rules queries answered by the author, Chris McDowell" />
+    <meta property="og:url" content="https://mythic.bastionland.tools/guidance" />
+    <meta property="og:image" content="https://mythic.bastionland.tools/img/card.webp" />
+    <meta property="twitter:image" content="https://mythic.bastionland.tools/img/card.webp" />
+</head>
+
+<body>
+    <div class="navigation">
+        <span class="title">The Tool</span>
+        <span class="subtitle">A Mythic Bastionland Resource</span>
+        <ul class="tabs">
+            <li class="tab-container">
+                <a href="#" data-dest="/" class="tab direct" role="button">Home</a>
+            </li>
+            <li class="tab-container">
+                <a href="#" class="tab dropdown" role="button" aria-expanded="false">Rules</a>
+                <ul class="dropdown-menu" role="menu" style="display: none;">
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/rules/">Glossary</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/guidance/">Seer's Guidance</li>
+                </ul>
+            </li>
+            <li class="tab-container">
+                <a href="#" class="tab dropdown" role="button" aria-expanded="false">Compendiums</a>
+                <ul class="dropdown-menu" role="menu" style="display: none;">
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/items/">Items</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/knights/">Knights</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/seers/">Seers</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/myths/">Myths</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/sparks/">Sparks</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/cast/">Cast</li>
+                </ul>
+            </li>
+            <li class="tab-container">
+                <a data-dest="/map" class="tab direct" role="button">Realm Maker</a>
+            </li>
+            <li class="search-bar">
+                <input type="search" class="search-input" id="search-input" placeholder="Ctrl + Space to search..."></input>
+                <button class="search-submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <ul class="search-results" id="search-results"></ul>
+            </li>
+            <li class="tab-container">
+                <div class="config-button tab" title="Configurator">
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="overlay"></div>
+    <div class="dialog-backdrop"></div>
+    <div class="content thin">
+        <div class="browser" id="list">
+            <header>
+    <div class="head">
+        <h1 class="browser-title">Guidance from the Seers</h1>
+        <p>
+            This page is a collection of quotes or rulings from Chris McDowell, most of them coming from his blog.
+        </p>
+    </div>
+    <div class="input">
+        <input type="text" class="list-input" id="list-input">
+        <div class="filter-total"></div>
+        <button disabled class="filter-button" title="Filter Results">Filter</button>
+    </div>
+    <ul class="filter-items">
+    </ul>
+    <div class="list-header">
+        <label class="name" data-sort="name">Name</label>
+        <label data-sort="type">
+            Type
+        </label>
+    </div>
+</header>
+<ul class="list" id="item-list">
+    <li class="browser-item" id="76e945fa-33d3-4214-b8fb-16615aeaa7e1" data-name="A Mythic Calendar" data-type="post">
+        <label class="name">
+            A Mythic Calendar
+        </label>
+        <label>
+            POST
+        </label>
+    </li>
+    <li class="browser-item" id="ce3ccdff-fdb4-4710-b5ac-8c107a5f6a57" data-name="Between the Realms" data-type="post">
+        <label class="name">
+            Between the Realms
+        </label>
+        <label>
+            POST
+        </label>
+    </li>
+    <li class="browser-item" id="62e92dd3-33c9-4d94-98f3-bd36f631ef8f" data-name="Between the Seasons" data-type="post">
+        <label class="name">
+            Between the Seasons
+        </label>
+        <label>
+            POST
+        </label>
+    </li>
+    <li class="browser-item" id="fb6c3e3c-6411-41ad-b974-0e330cb3ab5c" data-name="Can a myth only be &quot;solved&quot; in the myth&#x27;s hex?" data-type="faq">
+        <label class="name">
+            Can a myth only be &quot;solved&quot; in the myth&#x27;s hex?
+        </label>
+        <label>
+            FAQ
+        </label>
+    </li>
+    <li class="browser-item" id="1bcc969e-1290-4731-b817-98bc04d9972e" data-name="Can non-Knights use Gambits/Feats?" data-type="faq">
+        <label class="name">
+            Can non-Knights use Gambits/Feats?
+        </label>
+        <label>
+            FAQ
+        </label>
+    </li>
+    <li class="browser-item" id="360d709a-e6c9-488b-8654-f6e03e9b2624" data-name="Can you resolve a myth before the last omen?" data-type="faq">
+        <label class="name">
+            Can you resolve a myth before the last omen?
+        </label>
+        <label>
+            FAQ
+        </label>
+    </li>
+    <li class="browser-item" id="04211d84-a1bd-49a4-84c1-540c8dd5351c" data-name="Do I tell the players when they stumble upon a myth hex?" data-type="faq">
+        <label class="name">
+            Do I tell the players when they stumble upon a myth hex?
+        </label>
+        <label>
+            FAQ
+        </label>
+    </li>
+    <li class="browser-item" id="e7b4f0d3-c750-4146-8560-54e239df92f0" data-name="Do Myths have to be placed where they make sense?" data-type="faq">
+        <label class="name">
+            Do Myths have to be placed where they make sense?
+        </label>
+        <label>
+            FAQ
+        </label>
+    </li>
+    <li class="browser-item" id="7e8de02d-7e53-4e50-bc96-c302ac8329fc" data-name="Do Scars remove Virtues permanently?" data-type="faq">
+        <label class="name">
+            Do Scars remove Virtues permanently?
+        </label>
+        <label>
+            FAQ
+        </label>
+    </li>
+    <li class="browser-item" id="6469eae0-3c6a-4602-8afa-c970925cb8ba" data-name="Do qualities like Blast from a Smite or the Gallows Knight&#x27;s neck-catcher weapon affect all attacks in a group&#x27;s attack pool or just the Knight using that Feat/Ability?" data-type="faq">
+        <label class="name">
+            Do qualities like Blast from a Smite or the Gallows Knight&#x27;s neck-catcher weapon affect all attacks in a group&#x27;s attack pool or just the Knight using that Feat/Ability?
+        </label>
+        <label>
+            FAQ
+        </label>
+    </li>
+    <li class="browser-item" id="474a8d60-174d-4b5e-b29d-a171416adbbe" data-name="Do the knights have to be connected to the seers on their page?" data-type="faq">
+        <label class="name">
+            Do the knights have to be connected to the seers on their page?
+        </label>
+        <label>
+            FAQ
+        </label>
+    </li>
+    <li class="browser-item" id="03727b20-9e75-45f9-b762-324ba61c8802" data-name="Do the players know which Myth an Omen comes from?" data-type="faq">
+        <label class="name">
+            Do the players know which Myth an Omen comes from?
+        </label>
+        <label>
+            FAQ
+        </label>
+    </li>
+    <li class="browser-item" id="423c7e11-623a-497c-9872-dd67aab58350" data-name="Does Damage + Bolster happen before Gambits or after?" data-type="faq">
+        <label class="name">
+            Does Damage + Bolster happen before Gambits or after?
+        </label>
+        <label>
+            FAQ
+        </label>
+    </li>
+    <li class="browser-item" id="763878d3-9824-40a0-9acd-7046548a8e13" data-name="Does Smite blast hit allies?" data-type="faq">
+        <label class="name">
+            Does Smite blast hit allies?
+        </label>
+        <label>
+            FAQ
+        </label>
+    </li>
+    <li class="browser-item" id="d745ff72-1925-46bf-bf50-a892b5954731" data-name="Holding / Bailey / Keep" data-type="faq">
+        <label class="name">
+            Holding / Bailey / Keep
+        </label>
+        <label>
+            FAQ
+        </label>
+    </li>
+    <li class="browser-item" id="e43ef4cd-808a-4827-9344-0e2f1d27da99" data-name="How do I convert stat blocks from 5e or other games to design my own monsters/opponents?" data-type="faq">
+        <label class="name">
+            How do I convert stat blocks from 5e or other games to design my own monsters/opponents?
+        </label>
+        <label>
+            FAQ
+        </label>
+    </li>
+    <li class="browser-item" id="e517f42e-5ce6-4674-851a-8cd8471267c9" data-name="How much Virtue should a Knight lose when they trigger virtue loss through the action procedure or other non-specific means?" data-type="faq">
+        <label class="name">
+            How much Virtue should a Knight lose when they trigger virtue loss through the action procedure or other non-specific means?
+        </label>
+        <label>
+            FAQ
+        </label>
+    </li>
+    <li class="browser-item" id="6833895c-c7fa-4319-9e05-c0b2ab3fa97f" data-name="Impairing Impairing" data-type="post">
+        <label class="name">
+            Impairing Impairing
+        </label>
+        <label>
+            POST
+        </label>
+    </li>
+    <li class="browser-item" id="d21297e0-b4bb-419c-ae63-480009632c1f" data-name="Is the way to resolve a myth basically up to the players and I decide whether or not that works?" data-type="faq">
+        <label class="name">
+            Is the way to resolve a myth basically up to the players and I decide whether or not that works?
+        </label>
+        <label>
+            FAQ
+        </label>
+    </li>
+    <li class="browser-item" id="3fdb4a2e-9add-4b7e-a009-3215abfa0db1" data-name="More Landmarks" data-type="post">
+        <label class="name">
+            More Landmarks
+        </label>
+        <label>
+            POST
+        </label>
+    </li>
+    <li class="browser-item" id="88b23c32-f7f9-43bb-affa-4b26843313be" data-name="Strange Knights" data-type="post">
+        <label class="name">
+            Strange Knights
+        </label>
+        <label>
+            POST
+        </label>
+    </li>
+    <li class="browser-item" id="42339d88-25ee-4dda-bdbd-3a1cdedbb53c" data-name="The Knightly Grind" data-type="post">
+        <label class="name">
+            The Knightly Grind
+        </label>
+        <label>
+            POST
+        </label>
+    </li>
+    <li class="browser-item" id="b39255d0-7726-4087-a35a-93b8076929c1" data-name="What are players allowed to see/what is on your player facing map?" data-type="faq">
+        <label class="name">
+            What are players allowed to see/what is on your player facing map?
+        </label>
+        <label>
+            FAQ
+        </label>
+    </li>
+    <li class="browser-item" id="16712b7d-9fa7-4b99-ba64-bc4263b9ddf0" data-name="What does &quot;Wounded&quot; do?" data-type="faq">
+        <label class="name">
+            What does &quot;Wounded&quot; do?
+        </label>
+        <label>
+            FAQ
+        </label>
+    </li>
+    <li class="browser-item" id="a0aaa838-630a-4fa2-90ef-bb1330401db6" data-name="When Jousting or Duelling who gets to Deny first?" data-type="faq">
+        <label class="name">
+            When Jousting or Duelling who gets to Deny first?
+        </label>
+        <label>
+            FAQ
+        </label>
+    </li>
+    <li class="browser-item" id="58a01874-8091-4108-8517-e806dff97c6f" data-name="When should I replace/restock a Myth after the players have resolved it?" data-type="faq">
+        <label class="name">
+            When should I replace/restock a Myth after the players have resolved it?
+        </label>
+        <label>
+            FAQ
+        </label>
+    </li>
+    <li class="browser-item" id="7ca5538f-1439-4ae5-bae0-0c58b89d7423" data-name="When should the Unresolved Situations table be used? For every Myth?" data-type="faq">
+        <label class="name">
+            When should the Unresolved Situations table be used? For every Myth?
+        </label>
+        <label>
+            FAQ
+        </label>
+    </li>
+</ul>
+        </div>
+        <div class="item-display" id="description">
+            
+        </div>
+    </div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"97d79a951e5e4cc982e514c8732573ec","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>

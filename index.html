@@ -1,0 +1,147 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/description.css">
+    <link rel="stylesheet" type="text/css" href="css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="css/glyphter.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/description.css">
+    <link rel="stylesheet" type="text/css" href="css/glyphter.css">
+    <link rel="stylesheet" type="text/css" href="css/fonts.css">
+    <script src="https://kit.fontawesome.com/e546e56560.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/serializejson.js"></script>
+    <script src="js/dice/libs/three.min.js"></script>
+    <script src="js/dice/libs/cannon.min.js"></script>
+    <script src="js/dice/libs/teal.js"></script>
+    <script src="js/dice/dice.js"></script>
+    <script src="js/helpers.js"></script>
+    <script src="js/browser.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/configurator.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/dice.js"></script>    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>The Tool</title>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Tool" />
+    <meta name="twitter:description" content="A streamlined rules companion for Mythic Bastionland." />
+    <meta property="og:url" content="https://mythic.bastionland.tools/" />
+    <meta property="og:image" content="https://mythic.bastionland.tools/img/card.webp" />
+    <meta property="twitter:image" content="https://mythic.bastionland.tools/img/card.webp" />
+</head>
+
+<body>
+    <div class="navigation">
+        <span class="title">The Tool</span>
+        <span class="subtitle">A Mythic Bastionland Resource</span>
+        <ul class="tabs">
+            <li class="tab-container">
+                <a href="#" data-dest="/" class="tab direct" role="button">Home</a>
+            </li>
+            <li class="tab-container">
+                <a href="#" class="tab dropdown" role="button" aria-expanded="false">Rules</a>
+                <ul class="dropdown-menu" role="menu" style="display: none;">
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/rules/">Glossary</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/guidance/">Seer's Guidance</li>
+                </ul>
+            </li>
+            <li class="tab-container">
+                <a href="#" class="tab dropdown" role="button" aria-expanded="false">Compendiums</a>
+                <ul class="dropdown-menu" role="menu" style="display: none;">
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/items/">Items</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/knights/">Knights</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/seers/">Seers</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/myths/">Myths</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/sparks/">Sparks</li>
+                    <li class="dropdown-item" role="presentation" data-dest="/browse/cast/">Cast</li>
+                </ul>
+            </li>
+            <li class="tab-container">
+                <a data-dest="/map" class="tab direct" role="button">Realm Maker</a>
+            </li>
+            <li class="search-bar">
+                <input type="search" class="search-input" id="search-input" placeholder="Ctrl + Space to search..."></input>
+                <button class="search-submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <ul class="search-results" id="search-results"></ul>
+            </li>
+            <li class="tab-container">
+                <div class="config-button tab" title="Configurator">
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="overlay"></div>
+    <div class="dialog-backdrop"></div>
+    <div class="content">
+        <div class="home-nav">
+            <div class="span-stripe flexrow">
+                <h1 class="ul-aqua inline flex2">Rules</h1>
+                <h1 class="ul-amber inline flex5">Compendiums</h1>
+            </div>
+            <div class="span-content flexrow">
+                <a class="btn aqua" href="/browse/rules/">
+                    <i class="fa-solid fa-book"></i>
+                    <label>Glossary</label>
+                </a>
+                <a class="btn aqua" href="/browse/guidance/">
+                    <i class="fa-solid fa-brain"></i>
+                    <label>Guidance</label>
+                </a>
+                <a class="btn amber" href="/browse/items/">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                    <label>Items</label>
+                </a>
+                <a class="btn amber" href="/browse/knights/">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <label>Knights</label>
+                </a>
+                <a class="btn amber" href="/browse/myths/">
+                    <i class="fa-solid fa-tree"></i>
+                    <label>Myths</label>
+                </a>
+                <a class="btn amber" href="/browse/sparks/">
+                    <i class="fa-solid fa-hat-wizard"></i>
+                    <label>Sparks</label>
+                </a>
+                <a class="btn amber" href="/browse/cast/">
+                    <i class="fa-solid fa-user"></i>
+                    <label>Cast</label>
+                </a>
+            </div>
+        </div>
+        <div class="section">
+            <h1 class="ul-aqua">The Tool</h1>
+            <p>
+                This website is a fan project project that aims to make the rules of
+                <a href="https://chrismcdee.itch.io/mythic-bastionland" class="extern" target="_blank">
+                    Mythic Bastionland
+                </a>
+                more navigable. This site's content contains direct reference and quotations from the game's Quickstart
+                Rules which can be found on the game's
+                <a href="https://chrismcdee.itch.io/mythic-bastionland" class="extern" target="_blank">
+                    itch.io page
+                </a> alongside the full version of the rules.
+                This site is not officially endorsed in any way by Chris McDowall or Mythic Bastionland, but is made
+                with permission from them.
+                Mythic Bastionland is copyright © 2023 Chris McDowall.
+            </p>
+            <h1 class="ul-amber">Something Wrong?</h1>
+            <p>
+                If something looks wrong, or you think something is missing, reach out to me at
+                <a class="extern contact-me">
+                    loading-email
+                </a>.
+            </p>
+            <h1 class="ul-rose">In Progress</h1>
+            <p>
+                This site is an ongoing effort, but especially so right now. Most of what you see now is not final.
+            </p>
+        </div>
+    </div>
+</body>
