@@ -1,0 +1,11 @@
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015. (Reason: CORS request did not succeed). Status code: (null).
+None of the “sha512” hashes in the integrity attribute match the content of the subresource at “https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015”. The computed hash is “z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP+DGNKHfuwvY7kxvUdBeoGlODJ6+SfaPg==”. map
+Layout was forced before the page was fully loaded. If stylesheets are not yet loaded this may cause a flash of unstyled content. node.js:415:1
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015. (Reason: CORS request did not succeed). Status code: (null).
+None of the “sha512” hashes in the integrity attribute match the content of the subresource at “https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015”. The computed hash is “z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP+DGNKHfuwvY7kxvUdBeoGlODJ6+SfaPg==”. map
+DOM Ready. Initializing map... index.js:1258:11
+No local map found, generating new one. index.js:1271:13
+XHRPOST
+http://localhost:8000/index?ctypes=[]
+[HTTP/1 501 Unsupported method ('POST') 1ms]
+

@@ -1296,16 +1296,15 @@ $(document).ready(async () => {
   });
 
   // 7. PANZOOM INITIALIZATION
-  const elem = document.getElementById('map-frame'); // Targets the actual map container
+  const elem = document.getElementById('map-frame');
   if (elem && typeof Panzoom !== 'undefined') {
     const pz = Panzoom(elem, {
       maxScale: 2,
-      minScale: 0.05,
-      initialScale: 0.2, // Fixes the "Extremely Zoomed In" issue
-      contain: 'outside'
+      minScale: 0.1,
+      canvas: true // Helps with coordinate calculation for the edit box
     });
     
+    // Enable mouse wheel zooming
     elem.parentElement.addEventListener('wheel', pz.zoomWithWheel);
-    window.pz = pz;
   }
-});
+}); // This closes $(document).ready

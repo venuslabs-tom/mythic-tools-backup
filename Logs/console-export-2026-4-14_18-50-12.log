@@ -1,0 +1,9 @@
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015. (Reason: CORS request did not succeed). Status code: (null).
+None of the “sha512” hashes in the integrity attribute match the content of the subresource at “https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015”. The computed hash is “z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP+DGNKHfuwvY7kxvUdBeoGlODJ6+SfaPg==”. map
+Loading failed for the <script> with source “http://localhost:8000/map/js/map/ui.js”. map:13:30
+Loading failed for the <script> with source “http://localhost:8000/map/js/map/index.js”. map:14:33
+Loading failed for the <script> with source “http://localhost:8000/map/js/helpers.js”. map:15:31
+Loading failed for the <script> with source “http://localhost:8000/map/js/navigation.js”. map:16:34
+Loading failed for the <script> with source “http://localhost:8000/map/js/browse.js”. map:17:30
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015. (Reason: CORS request did not succeed). Status code: (null).
+None of the “sha512” hashes in the integrity attribute match the content of the subresource at “https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015”. The computed hash is “z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP+DGNKHfuwvY7kxvUdBeoGlODJ6+SfaPg==”. map
