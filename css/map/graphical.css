@@ -44,20 +44,86 @@ body {
   --color-overlay: #d83434;
 }
 
-.content .map-frame {
-  padding-bottom: var(--tile-margin);
+/* The main container */
+.content {
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 80px); /* Height minus the top navigation bar */
   overflow: hidden;
-  /* scrollbar-width: thin;
-  scrollbar-color: var(--color-aqua-1) transparent; */
-  height: 100%;
-  width: 70%;
-  text-align: center;
-  user-select: none;
-  border-radius: 25px;
-  background-color: #1f1914;
-  background: linear-gradient(-45deg, #14100d 0%, #16120d 100%);
-  box-shadow: inset 0 0 30px #0005;
 }
+
+/* The Sidebar: Locked to the right */
+.side-bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 450px; /* Adjust this to match your desired sidebar width */
+  height: 100%;
+  z-index: 10;
+  background-color: var(--color-dark-1);
+  border-left: thin solid var(--color-dark-4);
+  overflow-y: auto;
+}
+
+/* The Map "Window": Fills everything except the sidebar area */
+.content .map-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 450px; /* This must match the sidebar width exactly */
+  bottom: 0;
+  overflow: hidden; /* This clips the hex tiles */
+  z-index: 1;
+  background: #1a1a1a;
+}
+
+/* The Movable Map itself */
+#map-frame {
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  transform-origin: 0 0;
+  cursor: grab;
+}
+
+
+
+
+
+/*
+/* 1. The 'Window' - Fixed size, clips everything outside
+.content .map-frame {
+  position: absolute;
+  top: 80px;         /* Height of your top bar
+  left: 350px;       /* Width of your left sidebar
+  right: 350px;      /* Width of your right sidebar
+  bottom: 0;
+  overflow: hidden;  /* IMPORTANT: This prevents the map from covering UI
+  background: #1a1a1a;
+  z-index: 1;
+}
+
+/* 2. The 'Actual Map' - Can be huge, Panzoom moves this around
+#map-frame {
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  transform-origin: 0 0;
+  cursor: grab;
+}
+
+/* 3. Ensure Sidebars stay on top
+.config, .myths {
+  position: fixed;
+  top: 80px;
+  bottom: 0;
+  width: 350px;
+  z-index: 100; /* Keeps them above the map
+  background-color: var(--color-dark-1);
+}
+
+.config { left: 0; }
+.myths { right: 0; }*/
 
 .landscape-signifier {
   z-index: 200;
@@ -311,8 +377,14 @@ body {
 }
 
 .side-bar .myths {
-  font-size: var(--font-size-24);
+  position: fixed;    /* Keeps them pinned to the screen */
+  z-index: 100;       /* High number so they stay on top of the map */
+  height: 100vh;
+  background-color: var(--color-dark-1); /* Ensure they aren't transparent */
 }
+
+.config { left: 0; }
+.myths { right: 0; }
 
 .myths-list {
   padding-left: 60px;

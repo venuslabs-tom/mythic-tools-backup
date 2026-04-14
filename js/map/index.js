@@ -1281,8 +1281,12 @@ $(document).ready(async () => {
     mythNames = findMythNames();
   });
 
-  // 5. HEX INTERACTION: Listen to realm config updates
-  $(document).on("change", ".config input", updateCfg);
+  // Listen to all inputs inside the .config sidebar
+  $(document).on("change", ".config input", (ev) => {
+    updateCfg(ev); // Updates the internal config
+    tiles = generateRealm(realmCfg); // Immediately regenerate with new settings
+    regenerate(tiles);
+  });
 
   // 6. HEX INTERACTION: Edit a tile (Double Click)
   $(document).on("dblclick", ".map-cell", async (ev) => {
@@ -1295,16 +1299,72 @@ $(document).ready(async () => {
     regenerate(tiles);
   });
 
+  // --- UI Link Mappings ---
+
+  // Connects the "Upload Map" link to the existing promptUpload function
+  $(document).on("click", ".upload-map", (e) => {
+    e.preventDefault();
+    promptUpload(); // Uses the existing function from line 1214
+  });
+
+  // Connects the "Regenerate Map" link
+  $(document).on("click", ".regen-map", (e) => {
+    e.preventDefault();
+    tiles = generateRealm(realmCfg); // Uses your existing generation logic
+    regenerate(tiles);
+  });
+
+  // Updated Export Map listener to match original format
+  $(document).on("click", ".export-map", (e) => {
+    e.preventDefault();
+
+    // 1. Encode the tiles into strings to match the 'realmof...' format
+    const formattedTiles = encodeTiles(tiles);
+
+    // 2. Build the output object
+    const output = {
+      tiles: formattedTiles,
+      myths: mythNames,
+      config: realmCfg
+    };
+
+    // 3. Trigger the download
+    const blob = new Blob([JSON.stringify(output)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "realm-map.json";
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+
+  // Connects the "Save Image" link using your html-to-image.js library
+  $(document).on("click", ".save-hex", (e) => {
+    e.preventDefault();
+    const node = document.getElementById('map-frame');
+    htmlToImage.toPng(node)
+      .then((dataUrl) => {
+        const link = document.createElement('a');
+        link.download = 'realm-map.png';
+        link.href = dataUrl;
+        link.click();
+      })
+      .catch((error) => {
+        console.error('Error saving image:', error);
+      });
+  });
+
   // 7. PANZOOM INITIALIZATION
   const elem = document.getElementById('map-frame');
   if (elem && typeof Panzoom !== 'undefined') {
     const pz = Panzoom(elem, {
-      maxScale: 2,
+      maxScale: 4,
       minScale: 0.1,
-      canvas: true // Helps with coordinate calculation for the edit box
+      canvas: false,
+      contain: false // Crucial: false allows you to drag the map anywhere
     });
-    
-    // Enable mouse wheel zooming
+
+    // We attach the wheel listener to the map-frame (the parent)
     elem.parentElement.addEventListener('wheel', pz.zoomWithWheel);
   }
 }); // This closes $(document).ready

@@ -584,25 +584,33 @@ table h3 {
 #ui-overlay {
   z-index: 500;
   position: fixed;
-  width: 100%;
-  height: 100%;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   pointer-events: none;
+  
+  /* Add these lines to center the child (the dialog) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Dialog boxes*/
 .ui-dialog {
-  position: fixed;
+  position: relative;
   background-color: var(--color-dark-1-90);
   border: 1px solid var(--color-dark-4);
   display: flex;
+  margin: auto;
   flex-direction: column;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   pointer-events: all;
   border-radius: 10px;
   box-shadow: 0 0 10px black;
   max-width: 800px;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
 }
 .ui-dialog .dialog-header {
   background-color: var(--color-dark-2);
